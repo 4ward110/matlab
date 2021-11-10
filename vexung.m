@@ -10,10 +10,9 @@
 %     xlabel('truc hoanh');
 %     ylabel('truc tung'); 
 % end
-% 
 
-function [y] = vexung(b, a, N)
-T = b*1-3
+function y = vexung(b, a, N)
+T = b - 3
 t1 = (0:T/100:T-T/100);
 y1 = exp(-a*t1);
 t = t1;
