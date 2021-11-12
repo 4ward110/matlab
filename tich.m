@@ -7,6 +7,6 @@ for i=1:N
     b = (a*i+5)/2;
     b = sqrt(b);
     c = b + i^2;
-    m = m*c;
+    m = m + c;
 end
 
