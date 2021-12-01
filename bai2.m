@@ -9,26 +9,26 @@ Rb = N*1e6;
 SNR_dB = [5 8 12];
 SNR = 10.^(SNR_dB/10);
 nb = log2(M); % Số bit biểu diễn 1 ký hiệu (bits/sym)
-n_syms = floor(n_bits/nb); % Độ dài chuỗi ký hiệu
-Tend = n_bits/Rb; % Thời gian mô phỏng toàn bộ chuỗi tín hiệu
+n_syms = floor(n_bits/nb); % �?ộ dài chuỗi ký hiệu
+Tend = n_bits/Rb; % Th�?i gian mô ph�?ng toàn bộ chuỗi tín hiệu
 Tb = 1/Rb; % Chu kì bit
 Ts = M*Tb; % Chu kì ký hiệu
-%-------------------------------------- Điều chế -----------------------------%
-% Bộ điều chế QAM với đầu vào là ‘bit’
-d = qammod(bits', M, 'InputType', 'bit'); % Trả về chuỗi d phức là chuỗi các mức của ký hiệu
+%-------------------------------------- �?i�?u chế -----------------------------%
+% Bộ đi�?u chế QAM với đầu vào là ‘bit’
+d = qammod(bits', M, 'InputType', 'bit'); % Trả v�? chuỗi d phức là chuỗi các mức của ký hiệu
 %------------------------------- Tạo xung tín hiệu phát -------------------------%
-n_sample = 100; % Số mẫu cho một ký hiệu
+n_sample = 10; % Số mẫu cho một ký hiệu
 Es = 1; % Giả sử nặng lượng mỗi ký hiệu là 1
 pha = 0; % Pha ban đầu
-t_m= 0:Ts/n_sample:(Ts-Ts/100); % vector thời gian cho 1 ký hiệu
+t_m= 0:Ts/n_sample:(Ts-Ts/100); % vector th�?i gian cho 1 ký hiệu
 p_m = sqrt(2*Es/Ts)*(1-cos(2*pi*t_m/Ts)); % Tạo xung p(t) cho
-% Đồng nhất độ dài của p(t) và d(k) với độ dài là (số mẫu) x (số ký hiệu)
+% �?ồng nhất độ dài của p(t) và d(k) với độ dài là (số mẫu) x (số ký hiệu)
 p = kron(ones(1,n_syms), p_m);
 d_s = kron(d.', ones(1,n_sample));
 s = d_s.*p.*exp(i*pha); % Xung tín hiệu s(t) được tạo ra
-% tạo vector thời gian với độ dài tương ứng s(t)
+% tạo vector th�?i gian với độ dài tương ứng s(t)
 t = kron(ones(1,length(d')), t_m)+kron([0:Ts:((n_syms-1)*Ts)], ones(1,n_sample));
-%--------------- Quá trình mô phỏng qua kênh AWGN --------------------%
+%--------------- Quá trình mô ph�?ng qua kênh AWGN --------------------%
 BER = []; % Khởi tạo vector BER lưu BER tương ứng mỗi SNR
 for i = 1:length(SNR) % SNR loop
  nMC = 10; % Số vòng lặp cho Monte Carlo loop
@@ -47,9 +47,9 @@ for i = 1:length(SNR) % SNR loop
  dr =(dra/drb); % Chuỗi các mức của các ký hiệu tương ứng
 
 
- %--------------------------- Giải điều chế ----------------------------%
- % Bộ giải điều chế từ chuỗi các mức phức với đầu ra là bit
- % Giải điều chế
+ %--------------------------- Giải đi�?u chế ----------------------------%
+ % Bộ giải đi�?u chế từ chuỗi các mức phức với đầu ra là bit
+ % Giải đi�?u chế
  bits_output = qamdemod(dr.',M,'OutputType','bit');
  %Tính số lượng bit lỗi
  err = err + length(bits(bits'~= bits_output));
@@ -90,7 +90,7 @@ for i = 1:length(SNR) % SNR loop
  figure, imshow(img_back); title(['Anh khoi phuc tai SNR = ',num2str(SNR_dB(i))])
 
 end % SNR loop
-% In kết quả tỉ lệ lỗi bit BER cho từng trường hợp SNR
+% In kết quả tỉ lệ lỗi bit BER cho từng trư�?ng hợp SNR
 for i = 1:length(SNR_dB)
  fprintf('Tai SNR=%d , co BER = %f \n',SNR_dB(i),BER(i));
 end

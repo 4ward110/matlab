@@ -1,9 +1,9 @@
 %%%% Nguyễn Xuân Minh – B18DCVT294 – D18CQVT06-B %%%%%%%%
 function [image_size, bits, n_bits] = image2binary(input_path)
 %%%%%%%%%%%% Quá trình chuyển ảnh thành chuỗi nhị phân %%%%%%
-%Đọc file ảnh, trả về ma trận A ba chiều
+%�?�?c file ảnh, trả v�? ma trận A ba chi�?u
 A = imread(input_path);
-A = imresize(A, [320 NaN]);
+% A = imresize(A, [320 NaN]);
 image_size = size(A); %Lấy kích thước của ảnh
 %Chuyển các phần tử từ ma trận ảnh thành ma trận nhị phân
 B = de2bi(A);

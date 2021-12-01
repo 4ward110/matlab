@@ -1,5 +1,4 @@
 % V? ??c Long - B18DCVT272
-function image2binary
 img = imread('flower.jpg'); %??c file ?nh
 im_info = imfinfo('flower.jpg'); % l?y thong tin c?a ?nh
 im_size = size(img) % ??a ra kích th??c ma tr?n ?nh ??u vào
