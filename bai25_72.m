@@ -34,19 +34,19 @@ title('Bieu dien nghiem phuong trinh vi phan bang  Runge-Kutta bac 3','Fontname'
 grid on
  
 %So sanh cac nghiem voi nghiem giai tich
-for i = 1:n
-    if t(i) == 1
-        yy1 = y(i);
-    else
-        if t(i) == 2
-            yy2 = y(i);
-        end
-    end
-end
- 
-delta1 = abs(y_ex(1) - yy1);
-delta2 = abs(y_ex(2) - yy2);
-disp ('Sai so so voi nghiem giai tich tai t = 1')
-disp (delta1);
-disp ('Sai so so voi nghiem giai tich tai t = 2')
-disp (delta2);
+% for i = 1:n
+%     if t(i) == 1
+%         yy1 = y(i);
+%     else
+%         if t(i) == 2
+%             yy2 = y(i);
+%         end
+%     end
+% end
+%  
+% delta1 = abs(y_ex(1) - yy1);
+% delta2 = abs(y_ex(2) - yy2);
+% disp ('Sai so so voi nghiem giai tich tai t = 1')
+% disp (delta1);
+% disp ('Sai so so voi nghiem giai tich tai t = 2')
+% disp (delta2);

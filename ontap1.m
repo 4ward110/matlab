@@ -1,4 +1,48 @@
-% Bài 24
+% A = [1 -1; 2 2];
+% B = [3 2; 1 1];
+% % X = inv(A)*B
+% % A*X 
+% Y = B*inv(A);
+% Y*A;
+% t = 0:0.1:10;
+% s  = 20*sin(2*pi*5*t)
+% a = input('');
+% b = input('');
+% fa = -inf;
+% fb = inf;
+% while (b-a) > eps*1
+%     c = (a + b)/2;
+%     fx = c^3/3 + 4*c^2 +c -6;
+%     if sign(fx) == sign(fa)
+%         a = c;
+%         fa = fx;
+%     else
+%         b = c;
+%         fb = fx;
+%     end
+% end
+% c
+
+% a = -1.5;
+% b = 1.5;
+% N = 100;
+% delta = (b-a)/N;
+% tol = 0;
+% for k = 1:N
+%     x = a + (k-1/2)*delta;
+%     f = 4*x^3*2*exp(x)*cos(x);
+%     tol = tol + f;
+% end
+% tol*delta
+
+% x0 = 8;
+% root = 1.5;
+% while x0 - root > 0.00001
+%     x0 = root;
+%     root = (x0^2 + 3)/(2*x0);
+% end
+% root
+
 clc;
 clear all;
 close all;
@@ -47,5 +91,8 @@ disp ('Sai so so voi nghiem giai tich tai t = 1')
 disp (delta1);
 disp ('Sai so so voi nghiem giai tich tai t = 2')
 disp (delta2)
+ 
+
+
 
 
