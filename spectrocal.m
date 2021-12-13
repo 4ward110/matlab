@@ -2,6 +2,10 @@ function [ f, Pf ] = spectrocal( t, x )
 %SPECTROCAL Summary of this function goes here
 %   Detailed explanation goes here
 
+% t - vector thoi gian
+% x - input sequence
+% f - frequency vector
+% Pf - uoc luong mat do pho cong suat cua x
 Ns = length(x);
 Ts = t(2) - t(1);
 
