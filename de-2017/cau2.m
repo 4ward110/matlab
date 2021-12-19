@@ -1,6 +1,6 @@
-d = randint(1,2000)
-R = 50e6; %toc do bit
-Ns = 4e4; %so mau bieu dien
+d = randint(1,100)
+R = 10e6; %toc do bit
+Ns = 1e4; %so mau bieu dien
 Tb = 1/R; %chu ki bit
 Nb = length(d); %so luong bit
 Timewindow = Nb*Tb; %tong thoi gian bieu dien
@@ -30,10 +30,10 @@ for k = 1:Ns
     end
     y(k) = code(n);
 end
-% plot(t,y,'linewidth',1,'color','b');
-% grid on;
-% ylim([-1.5 1.5])
-% figure
+plot(t,y,'linewidth',1,'color','b');
+grid on;
+ylim([-1.5 1.5])
+figure
 
 % function yf = butterwflt(x,n,B,Ts)
 B = 150e6;

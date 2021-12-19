@@ -32,4 +32,5 @@ for k = 1:Ns
         end
     end
 end
+plot(t,y);
 
